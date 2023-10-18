@@ -272,6 +272,7 @@ function App() {
           : friend
       )
     );
+    setSelectedFriend(null);
   }
 
   return (
@@ -400,7 +401,7 @@ function FormSplitBill({ selectedFriend, onSplitBill }) {
     e.preventDefault();
     if (!bill || !paidByUser) return;
 
-    const value = whoIsPaying === "user" ? bill - paidByUser : -paidByUser;
+    const value = whoIsPaying === "user" ? bill - paidByUser : -paidByUser; // checking who owes money to whom
     onSplitBill(value);
   }
 
